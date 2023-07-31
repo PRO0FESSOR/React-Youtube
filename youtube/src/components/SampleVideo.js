@@ -2,10 +2,11 @@ import React from 'react'
 import './SampleVideo.css';
 
 
-export default function SampleVideo({title,channel,views,time,verified,children}) {
+export default function SampleVideo({title,id,channel="Coder Dost",views,time,verified,children,deleteVideos,editVideo}) {
   return (
     <>
     <div className='container'>
+    <button className='close' onClick={()=>deleteVideos(id)}>X</button>  
     <div className="pic">
     <img src="https://picsum.photos/300/250" alt="Katherine Johnson" />
     </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import PlayButton from "./PlayButton";
 import SampleVideo from "./SampleVideo";
 
-export default function VideoList({videos}) {
+export default function VideoList({videos,deleteVideos}) {
   return (
     <>
     {videos.map((video) => (
@@ -14,6 +14,7 @@ export default function VideoList({videos}) {
             channel={video.channel}
             verified={video.verified}
             id={video.id}
+            deleteVideos={deleteVideos}
           >
             <PlayButton>{video.title}</PlayButton>
           </SampleVideo>
