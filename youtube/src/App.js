@@ -1,9 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import PlayButton from "./components/PlayButton";
-import SampleVideo from "./components/SampleVideo";
 import videosDb from "./Data/data";
 import AddButton from "./components/AddButton";
+import VideoList from "./components/VideoList";
 
 function App() {
   const [videos, setVideos] = useState(videosDb);
@@ -16,19 +15,7 @@ function App() {
     <>
       <div className="App">
         <AddButton addVideos={addVideos}></AddButton>
-        {videos.map((video) => (
-          <SampleVideo
-            key={video.id}
-            title={video.title}
-            views={video.views}
-            time={video.time}
-            channel={video.channel}
-            verified={video.verified}
-            id={video.id}
-          >
-            <PlayButton>{video.title}</PlayButton>
-          </SampleVideo>
-        ))}
+        <VideoList videos={videos}></VideoList>        
       </div>
     </>
   );
